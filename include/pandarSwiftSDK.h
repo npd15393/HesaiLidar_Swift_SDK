@@ -25,10 +25,10 @@
 #include <pcl/point_types.h>
 #include <boost/atomic.hpp>
 #include <boost/lockfree/queue.hpp>
-#include "pandarSwiftDriver.h"
-#include "laser_ts.h"
-#include "tcp_command_client.h"
-#include "point_types.h"
+#include <lib_pandar_swift/pandarSwiftDriver.h>
+#include <lib_pandar_swift/laser_ts.h>
+#include <lib_pandar_swift/tcp_command_client.h>
+#include <lib_pandar_swift/point_types.h>
 #include <boost/thread.hpp>
 
 #ifndef CIRCLE
@@ -349,7 +349,7 @@ class PandarSwiftSDK {
 								boost::function<void(PandarPacketsArray*)> rawcallback, \
 								boost::function<void(double)> gpscallback, \
 								std::string certFile, std::string privateKeyFile, std::string caFile, \
-								int startangle, int timezone, std::string publishmode, bool coordinateCorrectionFlag, std::string datatype=LIDAR_DATA_TYPE);
+								uint16_t startangle, int64_t timezone, std::string publishmode, bool coordinateCorrectionFlag, std::string datatype=LIDAR_DATA_TYPE);
 	~PandarSwiftSDK() {}
 
 	void driverReadThread();

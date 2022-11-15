@@ -8,7 +8,7 @@
 /** @file
  *   This class PandarSwiftSDKs raw Pandar128 3D LIDAR packets to PointCloud2.
  */
-#include "pandarSwiftSDK.h"
+#include <lib_pandar_swift/pandarSwiftSDK.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
@@ -18,7 +18,7 @@
 #include <fstream>
 #include <iostream>
 #include "taskflow.hpp"
-#include "platUtil.h"
+#include <lib_pandar_swift/platUtil.h>
 // #define FIRETIME_CORRECTION_CHECK 
 // #define COORDINATE_CORRECTION_CHECK
 
@@ -72,7 +72,7 @@ PandarSwiftSDK::PandarSwiftSDK(std::string deviceipaddr, uint16_t lidarport, uin
 							boost::function<void(PandarPacketsArray*)> rawcallback, \
 							boost::function<void(double)> gpscallback, \
 							std::string certFile, std::string privateKeyFile, std::string caFile, \
-							int startangle, int timezone, std::string publishmode, bool coordinateCorrectionFlag, std::string datatype) {
+							uint16_t startangle, int64_t timezone, std::string publishmode, bool coordinateCorrectionFlag, std::string datatype) {
 	m_sSdkVersion = "PandarSwiftSDK_1.2.19";
 	printf("\n--------PandarSwift SDK version: %s--------\n",m_sSdkVersion.c_str());
 	m_sDeviceIpAddr = deviceipaddr;
