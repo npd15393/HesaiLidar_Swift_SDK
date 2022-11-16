@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 #include "pandarSwiftSDK.h"
-// #define PRINT_FLAG
+#define PRINT_FLAG
 
 #define PCD_FILE_WRITE_FLAG (false) //false: don't save point cloud data;
                                     //true : save a frame of point cloud data
@@ -47,9 +47,9 @@ void rawcallback(PandarPacketsArray *array) {
 
 int main(int argc, char** argv) {
     boost::shared_ptr<PandarSwiftSDK> spPandarSwiftSDK;
-    spPandarSwiftSDK.reset(new PandarSwiftSDK(std::string("192.168.1.201"), 2368, 10110, std::string("Pandar128"), \
-                                std::string("../params/Pandar128_Correction.csv"), \
-                                std::string("../params/Pandar128_Firetimes.csv"), \
+    spPandarSwiftSDK.reset(new PandarSwiftSDK(std::string("192.168.1.202"), 2379, 10110, std::string("Pandar128"), \
+                                std::string("../params/PandarQT128_Correction.csv"), \
+                                std::string("../params/PandarQT128_Firetimes.csv"), \
                                 std::string(""), lidarCallback, rawcallback, gpsCallback, \
                                 std::string(""), \
                                 std::string(""), \

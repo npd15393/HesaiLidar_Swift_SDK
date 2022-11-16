@@ -25,10 +25,10 @@
 #include <pcl/point_types.h>
 #include <boost/atomic.hpp>
 #include <boost/lockfree/queue.hpp>
-#include <lib_pandar_swift/pandarSwiftDriver.h>
-#include <lib_pandar_swift/laser_ts.h>
-#include <lib_pandar_swift/tcp_command_client.h>
-#include <lib_pandar_swift/point_types.h>
+#include "pandarSwiftDriver.h"
+#include "laser_ts.h"
+#include "tcp_command_client.h"
+#include "point_types.h"
 #include <boost/thread.hpp>
 
 #ifndef CIRCLE
@@ -99,11 +99,11 @@
    PANDAR128_SHUTDOWN_FLAG_SIZE + PANDAR128_TAIL_RESERVED3_SIZE +  \
    PANDAR128_MOTOR_SPEED_SIZE + PANDAR128_TS_SIZE +                \
    PANDAR128_RETURN_MODE_SIZE + PANDAR128_FACTORY_INFO + PANDAR128_UTC_SIZE)
-// #define PANDAR128_PACKET_SIZE                                         \
-//   (PANDAR128_HEAD_SIZE + PANDAR128_BLOCK_SIZE * PANDAR128_BLOCK_NUM + \
+// #define PANDAR128_PACKET_SIZE                      
+//   (PANDAR128_HEAD_SIZE + PANDAR128_BLOCK_SIZE * PANDAR128_BLOCK_NUM +
 //    PANDAR128_TAIL_SIZE)
 #define PANDAR128_SEQ_NUM_SIZE (4)
-// #define PANDAR128_PACKET_SEQ_NUM_SIZE \
+// #define PANDAR128_PACKET_SEQ_NUM_SIZE
 //   (PANDAR128_PACKET_SIZE + PANDAR128_SEQ_NUM_SIZE)
 #define PANDAR128_WITHOUT_CONF_UNIT_SIZE (DISTANCE_SIZE + INTENSITY_SIZE)
 
@@ -271,7 +271,7 @@ typedef struct PacketsBuffer_s {
 			if(m_iterPush == m_iterTaskBegin) {
 				static uint32_t tmp = m_iterTaskBegin - m_buffers.begin();
 				if(m_iterTaskBegin - m_buffers.begin() != tmp) {
-					printf("buffer don't have space!,%d\n",m_iterTaskBegin - m_buffers.begin());
+					printf("buffer don't have space!,%ld\n",m_iterTaskBegin - m_buffers.begin());
 					tmp = m_iterTaskBegin - m_buffers.begin();
 				}
 				lastOverflowed = true;

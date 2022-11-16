@@ -12,7 +12,7 @@ SET(CMAKE_BUILD_TYPE "Release")
 
 include_directories(
     .
-    include
+    include/lib_pandar_swift
     src/taskflow
     ${Boost_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}

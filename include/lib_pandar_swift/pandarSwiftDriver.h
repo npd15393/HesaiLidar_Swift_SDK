@@ -16,7 +16,7 @@
 #define _PANDAR_DRIVER_H_ 1
 
 #include <string>
-#include <input.h>
+#include "input.h"
 
 #define PANDAR128_READ_PACKET_SIZE (1800)
 #define PANDARQT128_READ_PACKET_SIZE (200)
