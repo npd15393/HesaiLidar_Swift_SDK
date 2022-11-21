@@ -8,7 +8,7 @@
 /** @file
  *   This class PandarSwiftSDKs raw Pandar128 3D LIDAR packets to PointCloud2.
  */
-#include <lib_pandar_swift/pandarSwiftSDK.h>
+#include "pandarSwiftSDK.h"
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
@@ -18,7 +18,7 @@
 #include <fstream>
 #include <iostream>
 #include "taskflow.hpp"
-#include <lib_pandar_swift/platUtil.h>
+#include "platUtil.h"
 // #define FIRETIME_CORRECTION_CHECK 
 // #define COORDINATE_CORRECTION_CHECK
 
